@@ -26,8 +26,4 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - What are indexing and slicing in Python
 - What is the official Holberton Python coding style and how to check your code with PEP 8
 
-Topics | Links
------------- | -------------
-Python Hello World | PENDING
-
 ###### By Vanessa Garcia
