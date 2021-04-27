@@ -28,6 +28,6 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 
 Topics | Links
 ------------ | -------------
-Python Hello World | PENDING
+Python Hello World | [Link](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x00-python-hello_world)
 
 ###### By Vanessa Garcia
