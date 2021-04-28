@@ -26,8 +26,10 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - What are indexing and slicing in Python
 - What is the official Holberton Python coding style and how to check your code with PEP 8
 
-Topics | Links
------------- | -------------
-Python Hello World | [Link](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x00-python-hello_world)
+Language | Topics | Links
+------------ | ------------ | -------------
+Python | "Hello World" | [Link](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x00-python-hello_world)
+Python | "if else loops functions" | [Link](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x01-python-if_else_loops_functions)
+Python | "import modules" | [Link](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x02-python-import_modules)
 
 ###### By Vanessa Garcia
