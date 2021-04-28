@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
+
+
 def argument():
     num_args = len(argv)
     if num_args == 1:
