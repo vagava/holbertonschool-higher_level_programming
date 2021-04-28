@@ -1,4 +1,4 @@
-# 0x00. Python - Hello, World
+# Welcome to Python!
 
 ## Resources
 Read or watch:
