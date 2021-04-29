@@ -1,2 +1,2 @@
-#!/usr/bin/pyton3
+#!/usr/bin/python3
 import aditional
