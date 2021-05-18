@@ -28,8 +28,12 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 
 Language | Topics | Folder
 ------------ | ------------ | -------------
-Python | "Hello World" | [See](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x00-python-hello_world)
-Python | "if else loops functions" | [See](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x01-python-if_else_loops_functions)
-Python | "import modules" | [See](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x02-python-import_modules)
+Python | Hello World | [0x00](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x00-python-hello_world)
+Python | if else loops functions | [0x01](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x01-python-if_else_loops_functions)
+Python | import modules | [0x02](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x02-python-import_modules)
+Python | Data Structures: Lists, Tuples | [0x03](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x03-python-data_structures)
+Python | More Data Structures: Set, Dictionary | [0x04](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x04-python-more_data_structures)
+Python | Exceptions | [0x05](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x05-python-exceptions)
+Python | Classes and Objects | [0x06](https://github.com/vagava/holbertonschool-higher_level_programming/tree/main/0x06-python-classes)
 
 ###### By Vanessa Garcia
