@@ -8,7 +8,7 @@ class Square():
     '''
     def __init__(self, size=0, position=(0, 0)):
         '''
-         Instantiation with optional size
+        Instantiation with optional size
         '''
         if type(size) != int:
             raise TypeError("size must be an integer")
@@ -17,7 +17,8 @@ class Square():
         self.__size = size
 
         if type(position) != tuple or len(position) != 2\
-                or type(position[0]) != int or type(position[1]) != int:
+                or type(position[0]) != int or type(position[1]) != int\
+                    or position[0] < 0 or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
@@ -59,7 +60,7 @@ class Square():
         Public instance method  that prints in stdout
         the square with the character #
         '''
-        if(self.__size == 0):
+        if self.__size == 0:
                 print()
         else:
             if self.__position[1] > 0:
