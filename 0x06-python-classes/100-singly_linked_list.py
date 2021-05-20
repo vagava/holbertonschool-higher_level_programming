@@ -41,6 +41,9 @@ class Node():
 
 
 class SinglyLinkedList():
+    '''
+    clas to sort linked list and print
+    '''
     def __init__(self):
         self.__head = None
 
