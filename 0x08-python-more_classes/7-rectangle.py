@@ -67,9 +67,9 @@ class Rectangle:
             return string_
         for row in range(self.height):
             if row != self.height-1:
-                string_ += self.print_symbol*self.width + "\n"
+                string_ += str(self.print_symbol)*self.width + "\n"
             else:
-                string_ += self.print_symbol*self.width
+                string_ += str(self.print_symbol)*self.width
         return string_
 
     def __repr__(self):
