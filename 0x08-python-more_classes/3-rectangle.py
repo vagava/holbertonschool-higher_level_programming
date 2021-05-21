@@ -62,5 +62,8 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return string_
         for row in range(self.height):
-            string_ += "#"*self.width + "\n"
+            if row != self.height-1:
+                string_ += "#"*self.width + "\n"
+            else:
+                string_ += "#"*self.width
         return string_
