@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    '''empty class Rectangle that defines a rectangle'''
+    '''Rectangle that defines a rectangle'''
     def __init__(self, width=0, height=0):
         '''
         constructor
@@ -21,7 +21,6 @@ class Rectangle:
     def width(self, value):
         '''set value width'''
         if not isinstance(value, int):
-            print(type(value))
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
