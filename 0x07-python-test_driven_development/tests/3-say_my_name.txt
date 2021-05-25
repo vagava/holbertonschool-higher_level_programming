@@ -1,0 +1,79 @@
+=========================================
+=          Test `3-say_my_name`         =
+=========================================
+
+______________________________________________________
+
+- Seccion to check import, documentation and README  -
+______________________________________________________
+
+#1 import function fom the module
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+#2 Check docstring module:
+    >>> doc_module = __import__("3-say_my_name").__doc__
+    >>> len(doc_module.splitlines()) > 4
+    True
+
+#3 Check docstring of the function:
+    >>> doc_module = __import__("3-say_my_name").say_my_name.__doc__
+    >>> len(doc_module.splitlines()) > 2
+    True
+
+#4 Check PEP 8 style:
+    >>> import os
+    >>> os.popen("pep8 3-say_my_name.py").read()
+    ''
+
+#5 Check README file:
+    >>> current_wd = os.getcwd()
+    >>> path_readme = current_wd + "/README.md"
+    >>> os.path.exists(path_readme)
+    True
+
+______________________________________________________
+
+-      Seccion to check function requirements        -
+______________________________________________________
+
+#6 first_name must be string
+    >>> say_my_name([])
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+#7 first_name must be string
+    >>> say_my_name(34)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+#8 last_name must be string
+    >>> say_my_name('Ange', 8)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+______________________________________________________
+
+-      Seccion to check the main of the proyect      -
+______________________________________________________
+
+
+#9
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+#10
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+#11
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+#12
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
