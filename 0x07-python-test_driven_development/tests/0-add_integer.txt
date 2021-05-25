@@ -8,11 +8,13 @@ _____________________
     >>> add_integer = __import__('0-add_integer').add_integer
 
 #2 Check docstring module:
-    >>> len(__import__('0-add_integer').__doc__) > 5
+    >>> doc_module = __import__("0-add_integer").__doc__
+    >>> len(doc_module.splitlines()) > 4
     True
 
 #3 Check docstring of the function:
-    >>> len(__import__('0-add_integer').add_integer.__doc__) > 5
+    >>> doc_module = __import__("0-add_integer").add_integer.__doc__
+    >>> len(doc_module.splitlines()) > 2
     True
 
 #4 test add two integers:
