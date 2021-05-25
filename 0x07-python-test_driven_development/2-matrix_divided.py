@@ -18,7 +18,7 @@ def matrix_divided(matrix, div):
         - All elements of the matrix should be divided by div, rounded to
         2 decimal places
     '''
-    if not isinstance(matrix, list):
+    if not isinstance(matrix, list) or len(matrix) < 1 or len(matrix[0]) < 1:
         raise TypeError("matrix must be a matrix (list of lists) of" +
                         " integers/floats")
     if not isinstance(div, (int, float)):
@@ -43,11 +43,3 @@ def matrix_divided(matrix, div):
                 new_row.append(round(columns/div, 2))
         new_matrix.append(new_row)
     return new_matrix
-
-
-
-    matrixp = [[1]]
-
-    new = matrix_divided(matrixp, 2)
-
-    print(new)
