@@ -1,0 +1,115 @@
+=========================================
+=   Test`2-matrix_divided` doc_module    =
+=========================================
+
+______________________________________________________
+
+- Seccion to check import, documentation and README  -
+______________________________________________________
+
+#1 import function fom the module
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+#2 Check docstring module:
+    >>> doc_module = __import__("2-matrix_divided").__doc__
+    >>> len(doc_module.splitlines()) > 4
+    True
+
+#3 Check docstring of the function:
+    >>> doc_module = __import__("2-matrix_divided").matrix_divided.__doc__
+    >>> len(doc_module.splitlines()) > 2
+    True
+
+#4 Check PEP 8 style:
+    >>> import os
+    >>> os.popen("pep8 2-matrix_divided.py").read()
+    ''
+
+#5 Check README file:
+    >>> current_wd = os.getcwd()
+    >>> path_readme = current_wd + "/README.md"
+    >>> os.path.exists(path_readme)
+    True
+
+______________________________________________________
+
+-      Seccion to check function requirements        -
+______________________________________________________
+
+#6 Matrix must be a lists
+    >>> matrix_divided({}, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+#7 Matrix must be a lists of list
+    >>> matrix_divided([[1, 2, 3], {4 ,5 ,6}, [7, 8, 9]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+#8 Matrix must be a list of lists of integers or floats
+    >>> matrix_divided([[1, 2.5 , 3], [4, 5, 6], [7, 8, 'a']], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+#9 Each row of the matrix must be of the same size
+    >>> matrix_divided([[1, 2.5], [4, 5, 6], [7, 8, 6]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+#10 div must be a number (integer or float)
+    >>> matrix_divided([[1, 2.5, 3], [4, 5, 6], [7, 8, 6]], 'i')
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+#11 div can’t be equal to 0
+    >>> matrix_divided([[1, 2.5, 3], [4, 5, 6], [7, 8, 6]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+#12 All elements of the matrix should be divided by div, rounded to 2 decimal places
+    >>> new_matrix = matrix_divided([[5, -82, 43],[-24, 0.258, 6.456]], 7)
+    >>> print(new_matrix)
+    [[0.71, -11.71, 6.14], [-3.43, 0.04, 0.92]]
+
+______________________________________________________
+
+-      Seccion to check the mainof the proyect       -
+______________________________________________________
+
+#13
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+#14
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
+
+______________________________________________________
+
+-            Seccion to check edge cases             -
+______________________________________________________
+
+#15 Matrix is None
+    >>> matrix_divided( , 2)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+#16 div is None
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]],)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+#15 Matrix is None
+    >>> matrix_divided([], 2)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
