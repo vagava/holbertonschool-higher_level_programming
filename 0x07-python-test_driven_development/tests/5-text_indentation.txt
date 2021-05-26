@@ -1,0 +1,72 @@
+=========================================
+=       Test `5-text_indentation`       =
+=========================================
+
+______________________________________________________
+
+- Seccion to check import, documentation and README  -
+______________________________________________________
+
+#1 import function fom the module
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+#2 Check docstring module:
+    >>> doc_module = __import__("5-text_indentation").__doc__
+    >>> len(doc_module.splitlines()) > 4
+    True
+
+#3 Check docstring of the function:
+    >>> doc_module = __import__("5-text_indentation").text_indentation.__doc__
+    >>> len(doc_module.splitlines()) > 2
+    True
+
+#4 Check PEP 8 style:
+    >>> import os
+    >>> os.popen("pep8 5-text_indentation.py").read()
+    ''
+
+#5 Check README file:
+    >>> current_wd = os.getcwd()
+    >>> path_readme = current_wd + "/README.md"
+    >>> os.path.exists(path_readme)
+    True
+
+______________________________________________________
+
+-      Seccion to check function requirements        -
+______________________________________________________
+
+#6 Text must be a string
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+#7 prints a text with 2 new lines after '.'
+    >>> text_indentation("Hola . Mundo")
+    Hola .
+    <BLANKLINE>
+    Mundo
+
+#8 prints a text with 2 new lines after '?'
+    >>> text_indentation("Hola ? Mundo")
+    Hola ?
+    <BLANKLINE>
+    Mundo
+
+#9 prints a text with 2 new lines after ':'
+    >>> text_indentation("Hola : Mundo")
+    Hola :
+    <BLANKLINE>
+    Mundo
+
+#10 Should be no space at the beginning or at the end of each printed line
+    >>> text_indentation("  Hola :?.   Mundo  ")
+    Hola :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    Mundo
+
