@@ -19,9 +19,16 @@ def text_indentation(text):
     '''
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    strip_text = text.strip()
-    replace_point = strip_text.replace('.', '.\n\n')
+    # replace ., ?, : and add \n\n
+    replace_point = text.replace('.', '.\n\n')
     replace_question = replace_point.replace('?', '?\n\n')
-    replace_colon = replace_question.replace(':', ':\n\n')
-    final_text = replace_colon.replace('\n ', '\n')
-    print(final_text, end="")
+    replace_clon = replace_question.replace(':', ':\n\n')
+    # string reconstruction
+    str_ = ""
+    lines = replace_clon.splitlines()
+    for num_line in range(len(lines)):
+        if num_line == len(lines) - 1:
+            str_ += lines[num_line].strip()
+        else:
+            str_ += lines[num_line].strip() + '\n'
+    print(str_, end="")
