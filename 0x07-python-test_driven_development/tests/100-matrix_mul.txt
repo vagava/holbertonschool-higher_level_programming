@@ -1,0 +1,138 @@
+=========================================
+=         Test `100-matrix_mul`         =
+=========================================
+
+
+______________________________________________________
+
+- Seccion to check import, documentation and README  -
+______________________________________________________
+
+#1 import function fom the module
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+#2 Check docstring module:
+    >>> doc_module = __import__("100-matrix_mul").__doc__
+    >>> len(doc_module.splitlines()) > 4
+    True
+
+#3 Check docstring of the function:
+    >>> doc_module = __import__("100-matrix_mul").matrix_mul.__doc__
+    >>> len(doc_module.splitlines()) > 2
+    True
+
+#4 Check PEP 8 style:
+    >>> import os
+    >>> os.popen("pep8 100-matrix_mul.py").read()
+    ''
+
+#5 Check README file:
+    >>> current_wd = os.getcwd()
+    >>> path_readme = current_wd + "/README.md"
+    >>> os.path.exists(path_readme)
+    True
+
+______________________________________________________
+
+-      Seccion to check function requirements        -
+______________________________________________________
+
+#6 m_a must be an list
+    >>> matrix_mul(' ', [[1, 2],[3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a must be a list
+
+#6 m_b must be an list
+    >>> matrix_mul([[1, 2],[3, 4]], ' ')
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b must be a list
+
+#7 m_a must be a list of lists
+    >>> matrix_mul([[5, 6],{7, 8}], [[1, 2],[3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a must be a list of lists
+
+#8 m_b must be a list of lists
+    >>> matrix_mul([[1, 2],[3, 4]], [[5, 6],{7, 8}])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b must be a list of lists
+
+#9 if m_a is empty []
+    >>> matrix_mul([], [[1, 2],[3, 4]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_a can't be empty
+
+#10 if m_a is empty [[]]
+    >>> matrix_mul([[]], [[1, 2],[3, 4]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_a can't be empty
+
+#11 if m_b is empty []
+    >>> matrix_mul([[1, 2],[3, 4]], [])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_b can't be empty
+
+#12 if m_b is empty [[]]
+    >>> matrix_mul([[1, 2],[3, 4]], [[]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_b can't be empty
+
+#13 all elements of a lists of the m_a must be a integers or float
+    >>> matrix_mul([[5, 6], ['int', 8]], [[1, 2],[3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_a should contain only integers or floats
+
+#14 all elements of a lists of the m_b must be a integers or float
+    >>> matrix_mul([[1, 2],[3, 4]], [[5, 6], ['int', 8]])
+    Traceback (most recent call last):
+        ...
+    TypeError: m_b should contain only integers or floats
+
+#15 all rows of the m_a must be the same size
+    >>> matrix_mul([[5, 6], [7, 8, 9]], [[1, 2],[3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: each row of m_a must be of the same size
+
+#16 all rows of the m_b must be the same size
+    >>> matrix_mul([[1, 2],[3, 4]], [[5, 6], [7, 8, 9]])
+    Traceback (most recent call last):
+        ...
+    TypeError: each row of m_b must be of the same size
+
+#17 number of elements of the list in the matrix A must be equal to number of lists of matrix B.
+    >>> matrix_mul([[5, 3, 4], [8, 1, 0]], [[1, 4],[5, 3]])
+    Traceback (most recent call last):
+        ...
+    ValueError: m_a and m_b can't be multiplied
+
+______________________________________________________
+
+-      Seccion to check the main of the proyect      -
+______________________________________________________
+
+#18
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+    [[7, 10], [15, 22]]
+
+#19
+    >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+    [[13, 16]]
+
+______________________________________________________
+
+-            Seccion to check edge cases             -
+______________________________________________________
+
+#20
+    >>> matrix_mul([[5, 3, -4, -2], [8, -1, 0, -3]],[[1, 4, 0],[-5, 3, 7],[0, -9, 5],[5, 1, 4]])
+    [[-20, 63, -7], [-2, 26, -19]]
