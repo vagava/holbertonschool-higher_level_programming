@@ -44,4 +44,6 @@ def lazy_matrix_mul(m_a, m_b):
                 raise TypeError("m_b should contain only integers or floats")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
-    return numpy.dot(m_a, m_b)
+
+    new_matrix = numpy.dot(m_a, m_b)
+    return new_matrix.tolist()
