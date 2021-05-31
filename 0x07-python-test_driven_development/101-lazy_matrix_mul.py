@@ -17,7 +17,3 @@ def lazy_matrix_mul(m_a, m_b):
             new_matrix
     """
     return numpy.dot(m_a, m_b)
-
-print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-print ("__")
-print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
