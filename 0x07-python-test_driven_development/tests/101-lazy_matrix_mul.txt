@@ -132,6 +132,18 @@ ______________________________________________________
         ...
     SyntaxError: invalid syntax
 
+#20
+    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, "Hello"], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    ValueError: data type must provide an itemsize
+
+#21
+    >>> lazy_matrix_mul([[1, "Hello"], [3, 4]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+    ...
+    ValueError: data type must provide an itemsize
+
 
 ______________________________________________________
 
