@@ -121,10 +121,16 @@ ______________________________________________________
 ______________________________________________________
 
 #18
-    >>> lazy_matrix_mul('Holberton', [[5, 6], [7, 8]])
+    >>> lazy_matrix_mul([[1, "Hello"], [[5, 6], [7, 8]])
     Traceback (most recent call last):
         ...
-    numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U9'), dtype('<U9')) -> dtype('<U9')
+    SyntaxError: invalid syntax
+
+#19
+    >>> lazy_matrix_mul([[5, 6], [7, 8]], [[1, "Hello"])
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
 
 
 ______________________________________________________
