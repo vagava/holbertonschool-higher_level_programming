@@ -1,10 +1,12 @@
 '''
 Module of class BaseGeometry
+module in construction
 '''
 
 
 class BaseGeometry:
     '''
+    class in construction
     class in construction
     '''
     def area(self):
