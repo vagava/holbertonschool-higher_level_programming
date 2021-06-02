@@ -28,3 +28,5 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - What is deserialization
 - How to convert a Python data structure to a JSON string
 - How to convert a JSON string to a Python data structure
+
+###### By Vanessa Garcia
