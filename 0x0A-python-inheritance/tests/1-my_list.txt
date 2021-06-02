@@ -1,0 +1,64 @@
+=========================================
+=           Test `1-my_list`            =
+=========================================
+
+______________________________________________________
+
+- Seccion to check import, documentation and README  -
+______________________________________________________
+
+#1 import function fom the module
+    >>> MyList = __import__('1-my_list').MyList
+
+#2 Check docstring module:
+    >>> doc_module = __import__("1-my_list").__doc__
+    >>> len(doc_module.splitlines()) > 2
+    True
+
+#3 Check docstring of the function:
+    >>> doc_module = __import__("1-my_list").MyList.__doc__
+    >>> len(doc_module.splitlines()) > 1
+    True
+
+#4 Check PEP 8 style:
+    >>> import os
+    >>> os.popen("pep8 1-my_list.py").read()
+    ''
+
+#5 Check README file:
+    >>> current_wd = os.getcwd()
+    >>> path_readme = current_wd + "/README.md"
+    >>> os.path.exists(path_readme)
+    True
+
+______________________________________________________
+
+-      Seccion to check function requirements        -
+______________________________________________________
+
+
+
+______________________________________________________
+
+-      Seccion to check the main of the proyect      -
+______________________________________________________
+
+#6
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+
+______________________________________________________
+
+-            Seccion to check edge cases             -
+______________________________________________________
