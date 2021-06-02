@@ -1,0 +1,97 @@
+=========================================
+=           Test `7-base_geometry`            =
+=========================================
+
+______________________________________________________
+
+- Seccion to check import, documentation and README  -
+______________________________________________________
+
+#1 import function fom the module
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+#2 Check docstring module:
+    >>> doc_module = __import__("7-base_geometry").__doc__
+    >>> len(doc_module.splitlines()) > 2
+    True
+
+#3 Check docstring of the function:
+    >>> doc_module = __import__("7-base_geometry").BaseGeometry.__doc__
+    >>> len(doc_module.splitlines()) > 1
+    True
+
+#4 Check PEP 8 style:
+    >>> import os
+    >>> os.popen("pep8 7-base_geometry.py").read()
+    ''
+
+#5 Check README file:
+    >>> current_wd = os.getcwd()
+    >>> path_readme = current_wd + "/README.md"
+    >>> os.path.exists(path_readme)
+    True
+
+______________________________________________________
+
+-      Seccion to check function requirements        -
+______________________________________________________
+
+#6  Method area(self): that raises an Exception
+    >>> bg = BaseGeometry()
+    >>> print (bg.area())
+    Traceback (most recent call last):
+     ...
+    Exception: area() is not implemented
+
+#7 value must be an integer
+    >>> bg = BaseGeometry
+    >>> bg.integer_validator(bg, "hola", "mundo")
+    Traceback (most recent call last):
+        ...
+    TypeError: hola must be an integer
+
+#8 value must be an integer positive greater than 0
+    >>> b_g = BaseGeometry
+    >>> b_g.integer_validator(bg, "hola", -3)
+    Traceback (most recent call last):
+        ...
+    ValueError: hola must be greater than 0
+
+______________________________________________________
+
+-      Seccion to check the main of the proyect      -
+______________________________________________________
+
+#9
+    >>> bg = BaseGeometry()
+
+#10
+    >>> bg.integer_validator("my_int", 12)
+
+#11
+    >>> bg.integer_validator("width", 89)
+
+#12
+    >>> bg.integer_validator("name", "John")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+#13
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
+
+#14
+    >>> bg.integer_validator("distance", -4)
+    Traceback (most recent call last):
+        ...
+    ValueError: distance must be greater than 0
+
+______________________________________________________
+
+-            Seccion to check edge cases             -
+______________________________________________________
+
+#15 
