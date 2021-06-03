@@ -8,16 +8,13 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 filename = "add_item.json"
-
-try:   # load the objects
+# load the objects
+try:
     list_args = load_from_json_file(filename)
-except Exception as error:
+except Exception:
     list_args = []
 
-new_args = [arg for arg in sys.argv]   # add elements to the list from args
+# add args to the lists
+list_args += sys.argv[1:]
 
-new_args.remove(sys.argv[0])   # remove first element, the program
-
-list_args.extend(new_args)   # join the lists
-
-save_to_json_file(list_args, filename)   # save to json
+save_to_json_file(list_args, filename)
