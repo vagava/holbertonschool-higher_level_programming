@@ -102,4 +102,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         '''returns the dictionary representation of a Rectangle'''
-        keys = ['id', 'width', 'height', 'x', 'y']
+        return {'id': self.id, 'width': self.__width, 'height': self.__height,
+                'x': self.__x, 'y': self.__y}
