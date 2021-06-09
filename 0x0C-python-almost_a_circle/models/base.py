@@ -85,6 +85,6 @@ class Base:
         try:
             with open(cls.__name__ + '.json', 'r') as file:
                 dictionarys = cls.from_json_string(file.read())
-                return [cls.create(**diction) for diction in dictionarys]
+                return list(cls.create(**diction) for diction in dictionarys)
         except:
-            return[]
+            return list()
