@@ -88,4 +88,3 @@ class Base:
                 return [cls.create(**diction) for diction in dictionarys]
         except:
             return[]
-
