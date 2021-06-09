@@ -47,7 +47,7 @@ class Base:
     def to_json_string(list_dictionaries):
         ''' returns the JSON string representation '''
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"   # says "return the string" not "the empty list"
+            return str([])   # says "return the string" not "the empty list"
         return json.dumps(list_dictionaries)
 
     @classmethod
