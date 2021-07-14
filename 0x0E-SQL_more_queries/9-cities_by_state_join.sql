@@ -5,4 +5,4 @@
 SELECT cities.id, cities.name, states.name
 FROM cities
 CROSS JOIN states
-WHERE cities.states_id = states.id;
+WHERE cities.state_id = states.id;
