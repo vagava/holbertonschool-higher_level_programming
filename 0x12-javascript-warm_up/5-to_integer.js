@@ -6,5 +6,5 @@ if (args[0] === undefined) {
 } else if (isNaN(Number(args[0], 10))) {
   console.log('Not a number');
 } else {
-  console.log(Number(args[0], 10));
+  console.log('My number: ' + Number(args[0], 10));
 }
