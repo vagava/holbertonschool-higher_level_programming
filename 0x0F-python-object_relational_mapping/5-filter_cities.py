@@ -24,10 +24,13 @@ if __name__ == '__main__':
         cursor.execute(sql, (state_name,))
         data = cursor.fetchall()
     # Show Data
-    for i in range(len(data)):
-        if i != len(data)-1:
-            print(data[i][0], end=", ")
-        else:
-            print(data[i][0])
+    if len(data) == 0:
+        print()
+    else:
+        for i in range(len(data)):
+            if i != len(data)-1:
+                print(data[i][0], end=", ")
+            else:
+                print(data[i][0])
     # close Data base
     db.close()
