@@ -6,15 +6,20 @@ import sys
 import MySQLdb
 
 if __name__ == '__main__':
+    #get arguments
     args = sys.argv
+    #connect to Data Base
     db = MySQLdb.connect(host='localhost', charset='utf8', port=3360,
                          user=args[1], passwd=args[2], db=args[3])
     cursor = db.cursor()
-    # name_sech = MySQLdb.converters.Thing2Literal(args[4], d)
-    sql = f"SELECT id, name FROM states WHERE name = '{args[4]}'\
-             ORDER BY id ASC"
+    # Describe query
+    sql = "SELECT id, name FROM states WHERE name = '{}'\
+             ORDER BY id ASC".format(args[4])
+
+    # execute the query
     cursor.execute(sql)
     data = cursor.fetchall()
+    #show data
     for row in data:
         print(row)
     db.close()
