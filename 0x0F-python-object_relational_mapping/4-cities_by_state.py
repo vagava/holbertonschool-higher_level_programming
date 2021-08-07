@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # connect to Data Base
     db = MySQLdb.connect(host='localhost', port=3360,
                          user=args[1], passwd=args[2], db=args[3])
-    # Describe the quiery
+    # Describe the query
     sql = '''
             SELECT cities.id, cities.name, states.name
             FROM cities
