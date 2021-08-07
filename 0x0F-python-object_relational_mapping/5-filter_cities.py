@@ -16,7 +16,8 @@ if __name__ == '__main__':
     sql = """
             SELECT cities.name FROM cities
             LEFT JOIN states ON cities.state_id = states.id
-            WHERE states.name = '%s';
+            WHERE states.name = '%s'
+            ORDER BY cities.id ASC;
         """
     # execute query
     with db.cursor() as cursor:
