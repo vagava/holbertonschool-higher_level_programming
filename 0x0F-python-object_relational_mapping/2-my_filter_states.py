@@ -9,7 +9,7 @@ if __name__ == '__main__':
     # get arguments
     args = sys.argv
     # connect to Data Base
-    db = MySQLdb.connect(host='localhost', charset='utf8', port=3360,
+    db = MySQLdb.connect(host='localhost', charset='utf8', port=3306,
                          user=args[1], passwd=args[2], db=args[3])
     cursor = db.cursor()
     # Describe query
@@ -21,5 +21,6 @@ if __name__ == '__main__':
     data = cursor.fetchall()
     # show data
     for row in data:
-        print(row)
+        if row[1] == args[4]:
+            print(row)
     db.close()
