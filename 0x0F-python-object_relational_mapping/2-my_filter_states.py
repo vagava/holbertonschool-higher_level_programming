@@ -6,9 +6,9 @@ import sys
 import MySQLdb
 
 if __name__ == '__main__':
-    #get arguments
+    # get arguments
     args = sys.argv
-    #connect to Data Base
+    # connect to Data Base
     db = MySQLdb.connect(host='localhost', charset='utf8', port=3360,
                          user=args[1], passwd=args[2], db=args[3])
     cursor = db.cursor()
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     # execute the query
     cursor.execute(sql)
     data = cursor.fetchall()
-    #show data
+    # show data
     for row in data:
         print(row)
     db.close()
