@@ -19,7 +19,8 @@ if __name__ == "__main__":
     # print data
     for row in session.query(State).order_by(State.id).all():
         print("{}: {}".format(row.id, row.name))
-    # other way, but checker don't acept
+    session.close()
+    # other way, but checker don't accept
     # with Session() as session:
     #     for row in session.query(State).order_by(State.id).all():
     #         print("{}: {}".format(row.id, row.name))
