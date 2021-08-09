@@ -9,6 +9,8 @@ from sqlalchemy import Column
 from sqlalchemy import Integer, String, ForeignKey
 from model_state import Base, State
 from sqlalchemy.orm import relationship
+
+
 # Model the State table
 class City(Base):
     ''' Class definition of a State table'''
