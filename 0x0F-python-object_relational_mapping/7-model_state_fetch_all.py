@@ -15,6 +15,11 @@ if __name__ == "__main__":
     # Make the base of sessions
     Session = sessionmaker(engine)
     # instance of Session Class
-    with Session() as session:
-        for row in session.query(State).order_by(State.id).all():
-            print("{}: {}".format(row.id, row.name))
+    session = Session()
+    # print data
+    for row in session.query(State).order_by(State.id).all():
+        print("{}: {}".format(row.id, row.name))
+    # other way, but checker don't acept
+    # with Session() as session:
+    #     for row in session.query(State).order_by(State.id).all():
+    #         print("{}: {}".format(row.id, row.name))
