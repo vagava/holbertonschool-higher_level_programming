@@ -19,3 +19,4 @@
  otra rpueba apra git
 prueba desde ubuntu<>
 intento : use git remote set-url
+intento desde la consola
