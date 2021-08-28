@@ -11,6 +11,6 @@ if __name__ == '__main__':
     dict_ = {'email': sys.argv[1]}
     data = urllib.parse.urlencode(dict_).encode('ascii')
     req = urllib.request.Request(url, data=data)
-    with urllib.request.urlopen(url) as response:
+    with urllib.request.urlopen(req) as response:
         the_page = response.read()
         print(the_page.decode("utf-8"))
