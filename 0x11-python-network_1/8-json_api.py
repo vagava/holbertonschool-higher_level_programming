@@ -14,7 +14,7 @@ if __name__ == "__main__":
     r = requests.post('http://0.0.0.0:5000/search_user', data=dict_)
     try:
         if len(r.json()) > 0:
-            print("[{}] {}".format(r.json()[id],r.json()[name],))
+            print("[{}] {}".format(r.json()['id'],r.json()['name']))
         else:
             print('No result')
     except:
