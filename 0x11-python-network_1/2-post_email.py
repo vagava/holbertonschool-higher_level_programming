@@ -8,9 +8,8 @@ import sys
 
 if __name__ == '__main__':
     url = sys.argv[1]
-    dict_ = {'email': sys.argv[1]}
-    data = urllib.parse.urlencode(dict_).encode('ascii')
-    req = urllib.request.Request(url, data=data)
+    data_ = urllib.parse.urlencode({'email': sys.argv[1]}).encode('ascii')
+    req = urllib.request.Request(url, data_)
     with urllib.request.urlopen(req) as response:
         the_page = response.read()
         print(the_page.decode("utf-8"))
