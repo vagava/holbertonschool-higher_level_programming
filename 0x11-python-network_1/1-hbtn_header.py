@@ -4,7 +4,8 @@ and displays the value of the X-Request-Id'''
 import urllib.request
 import sys
 
-url = sys.argv[1]
-with urllib.request.urlopen(url) as response:
-    the_page = response.info()
-    print(the_page['X-Request-Id'])
+if __name__ == '__main__':
+    url = sys.argv[1]
+    with urllib.request.urlopen(url) as response:
+        the_page = response.info()
+        print(the_page['X-Request-Id'])
