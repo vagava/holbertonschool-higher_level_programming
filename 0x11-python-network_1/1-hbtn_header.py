@@ -6,5 +6,5 @@ import sys
 
 url = sys.argv[1]
 with urllib.request.urlopen(url) as response:
-    the_page = response
-    print(the_page.headers['X-Request-Id'])
+    the_page = response.info()
+    print(the_page['X-Request-Id'])
