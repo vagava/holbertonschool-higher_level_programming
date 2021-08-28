@@ -5,10 +5,6 @@ import urllib.request
 import sys
 
 url = sys.argv[1]
-try:
-    req = urllib.request.Request(url)
-    with urllib.request.urlopen(req) as response:
-        the_page = response
-        print(the_page.headers['X-Request-Id'])
-except:
-    pass
+with urllib.request.urlopen(url) as response:
+    the_page = response
+    print(the_page.headers['X-Request-Id'])
