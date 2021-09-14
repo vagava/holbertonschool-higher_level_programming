@@ -22,5 +22,5 @@ request(URL, function (err, res, body) {
 });
 
 function findCharacter (value, index, array) {
-  return value === 'https://swapi-api.hbtn.io/api/people/' + characterID;
+  return value.endsWith(characterID);
 }
