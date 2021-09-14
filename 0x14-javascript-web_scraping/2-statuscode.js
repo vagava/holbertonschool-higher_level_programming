@@ -6,7 +6,4 @@ const URL = process.argv[2];
 const https = require('https');
 https.get(URL, function (res) {
   console.log('code: ', res.statusCode);
-  res.on('error', function (e) {
-    console.error(e);
-  });
 });
