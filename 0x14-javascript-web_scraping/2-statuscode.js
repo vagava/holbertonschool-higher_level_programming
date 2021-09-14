@@ -9,4 +9,4 @@ request(URL, function (err, response) {
     return console.log(err);
   }
   console.log('code:', response && response.statusCode);
-  });
+});
