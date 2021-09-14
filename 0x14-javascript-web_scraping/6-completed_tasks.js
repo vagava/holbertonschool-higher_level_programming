@@ -18,7 +18,7 @@ request(URL, function (err, res, body) {
         count++;
       }
     }
-    if (count !== 0){
+    if (count !== 0) {
       taskDoneByUser[i] = count;
     }
   }
