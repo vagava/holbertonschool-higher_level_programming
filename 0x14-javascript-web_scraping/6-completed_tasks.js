@@ -18,8 +18,9 @@ request(URL, function (err, res, body) {
         count++;
       }
     }
-    taskDoneByUser[i] = count;
+    if (count !== 0){
+      taskDoneByUser[i] = count;
+    }
   }
-
   console.log(taskDoneByUser);
 });
