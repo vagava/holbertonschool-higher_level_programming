@@ -9,8 +9,9 @@ request(URL, function (err, res, body) {
     return console.log(err);
   }
   const characters = JSON.parse(body).characters;
-  for (const character of characters) {
-    request(character, function (err, res, body) {
+  console.log(characters)
+  for (let i = 0; i < characters.length; i++) {
+    request(characters[i], function (err, res, body) {
       if (err) {
         return console.log(err);
       }
